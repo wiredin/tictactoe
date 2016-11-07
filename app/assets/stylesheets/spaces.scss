@@ -1,0 +1,33 @@
+// Place all the styles related to the spaces controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.container{
+  max-width:680px;
+  width:auto;
+  padding:0 15px;
+}
+.board{
+  font-size:60px;
+}
+
+.table {
+  margin:0px auto;
+  width:400px;
+  height:300px;
+  text-align:center;
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        vertical-align:middle;
+        color:#ffffff;
+      }
+      >td:hover{
+        color:#000000;
+      }
+    }
+  }
+}
