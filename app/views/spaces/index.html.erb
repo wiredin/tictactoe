@@ -4,21 +4,11 @@
 <div class="board">
   <table class="table table-bordered">
     <tbody>
-      <tr>
-        <td>x</td>
-        <td>x</td>
-        <td>x</td>
-      </tr>
-      <tr>
-        <td>x</td>
-        <td>x</td>
-        <td>x</td>
-      </tr>
-      <tr>
-        <td>x</td>
-        <td>x</td>
-        <td>x</td>
-      </tr>
+      <% @game.each_with_index do |space,i| %>
+        <% if i == 0  or i == 3 or i == 6 %> <tr> <% end %>
+          <td>x</td>
+        <% if i == 2 or i == 5 or i == 8 %> </tr> <% end %> 
+      <% end %>
     </tbody>
   </table>
 </div>
