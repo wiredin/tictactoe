@@ -1,13 +1,21 @@
 <div class="page-header">
   <h1>Tic-Tac-Toe</h1>
 </div>
+<div class="message">
+<%= link_to "Play Again", controller: "spaces", action: "reset" %>
+</div>
 <div class="board">
   <table class="table table-bordered">
     <tbody>
       <% @game.each_with_index do |space,i| %>
         <% if i == 0  or i == 3 or i == 6 %> <tr> <% end %>
-          <td>x</td>
-        <% if i == 2 or i == 5 or i == 8 %> </tr> <% end %> 
+          <td>
+            <%= form_for space, remote: true, method: "patch" do |f| %>
+              <%= f.hidden_field :player, value: "x" %>
+              <%= button_tag "x", class: button_classes(space) %>
+            <% end %>
+          </td>
+        <% if i == 2 or i == 5 or i == 8 %></tr> <% end %> 
       <% end %>
     </tbody>
   </table>
