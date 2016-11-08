@@ -3,14 +3,13 @@
   <head>
     <title>Tic-Tac-Toe</title>
     <%= csrf_meta_tags %>
-
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <div class="container">
         <%= yield %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     </div>
   </body>
 </html>

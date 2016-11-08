@@ -9,8 +9,13 @@
 .board{
   font-size:60px;
 }
-
+.message{
+  margin:0 auto;
+  width:400px;
+  height:100px;
+}
 .table {
+  table-layout: fixed;
   margin:0px auto;
   width:400px;
   height:300px;
@@ -39,4 +44,9 @@
 
 .space-played{
   color:#000000; 
+}
+.space{
+  width:100%;
+  height: 100%; 
+  text-align:center;
 }
