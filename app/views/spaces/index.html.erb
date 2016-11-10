@@ -4,7 +4,7 @@
 <div class="message">
 <p><%= link_to "Play Again", { controller: "spaces", action: "reset"} , { class: "btn btn-primary"} %> </p>
 <% if game_over?(@game) %>
-  <h4><%= @winner %> wins!!</h4>
+  <h4 class="bg-success"><%= @winner %> wins!!</h4>
 <% else %>
   <h4><%= current_player %>'s turn</h4>
 <% end %>
