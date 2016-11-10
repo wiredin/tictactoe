@@ -2,10 +2,11 @@
   <h1>Tic-Tac-Toe</h1>
 </div>
 <div class="message">
-<%= link_to "Play Again", controller: "spaces", action: "reset" %>
-<p><%= current_player %>'s turn</p>
+<p><%= link_to "Play Again", { controller: "spaces", action: "reset"} , { class: "btn btn-primary"} %> </p>
 <% if game_over?(@game) %>
-  <p><%= @winner %> wins!!</p>
+  <h4><%= @winner %> wins!!</h4>
+<% else %>
+  <h4><%= current_player %>'s turn</h4>
 <% end %>
 </div>
 <div class="board">
@@ -14,13 +15,13 @@
       <% @game.each_with_index do |space,i| %>
         <% if i == 0  or i == 3 or i == 6 %> <tr> <% end %>
           <td>
-            <% if not played? space %>
+            <% if (not played? space) and (not game_over? @game) %>
               <%= form_for space, remote: true, method: "patch" do |f| %>
                 <%= f.hidden_field :player, value: current_player %>
               <% end %>
-              <div class="space" data-behavior="toggle_form_on_click"><%= current_player %></div>
+              <div class="space" data-behavior="toggle_form_on_click">  <%= current_player %></div>
             <% else %>
-              <div class="space space-played"> <%= space.player %> </div>
+              <div class="space space-played"> <%= space.player  %> </div>
             <% end %>
           </td>
         <% if i == 2 or i == 5 or i == 8 %></tr> <% end %> 
